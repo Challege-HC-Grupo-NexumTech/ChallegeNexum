@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FAQ - Perguntas Frequentes</title>
+    <link rel="stylesheet" href="../css/faq.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <header>
+        <h1>Saúde Digital - HCFMUSP</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="../index.html"><i class="fas fa-home"></i><span class="text">Home</span></a></li>
+                <li><a href="integrantes.html"><i class="fas fa-users"></i><span class="text">Quem somos</span></a></li>
+                <li><a href="contatos.html"><i class="fas fa-envelope"></i><span class="text">Contatos</span></a></li>
+                <li><a href="faq.html"><i class="fas fa-question-circle"></i><span class="text">FAQ</span></a></li>
+                <li><a href="solucao.html"><i class="fas fa-clipboard-list"></i><span class="text">Solução</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="faq-section">
+            <h2>Perguntas Frequentes (FAQ)</h2>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>1. O que é o Ágata?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>O Ágata é um assistente virtual que ajuda pacientes a agendar consultas e gerenciar seus compromissos por meio de voz ou texto.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>2. Como posso agendar uma consulta com o Ágata?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Basta falar ou digitar a solicitação, como "Gostaria de agendar uma consulta para amanhã", e seguir as instruções que o Ágata fornecer.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>3. O Ágata é acessível para pessoas com deficiências?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Sim! O Ágata oferece feedback sonoro e respostas simples, para auxiliar pessoas com dificuldades visuais ou cognitivas.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>4. O Ágata envia lembretes das consultas?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Sim, após o agendamento, o Ágata envia mensagens para lembrar o paciente sobre a consulta, garantindo que não seja esquecida.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>5. Como posso confirmar minha consulta?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Você pode confirmar sua presença respondendo "SIM" aos lembretes enviados pelo Ágata.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Saúde Digital - HCFMUSP. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Script para abrir/fechar as perguntas
+        const faqs = document.querySelectorAll('.faq-question');
+        faqs.forEach(faq => {
+            faq.addEventListener('click', () => {
+                const expanded = faq.getAttribute('aria-expanded') === 'true';
+                faq.setAttribute('aria-expanded', !expanded);
+                const answer = faq.nextElementSibling;
+                if (!expanded) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    faq.querySelector('i').classList.replace('fa-chevron-down', 'fa-chevron-up');
+                } else {
+                    answer.style.maxHeight = null;
+                    faq.querySelector('i').classList.replace('fa-chevron-up', 'fa-chevron-down');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
