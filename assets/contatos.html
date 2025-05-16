@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contato.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Contatos</title>
+</head>
+<body>
+    <header>
+      <h1>Saúde Digital - HCFMUSP</h1>
+        <nav>
+          <ul class="menu">
+            <li><a href="../index.html"><i class="fas fa-home"></i><span class="text">Home</span></a></li>
+            <li><a href="integrantes.html"><i class="fas fa-users"></i><span class="text">Quem somos</span></a></li>
+            <li><a href="contatos.html"><i class="fas fa-envelope"></i><span class="text">Contatos</span></a></li>
+            <li><a href="faq.html"><i class="fas fa-question-circle"></i><span class="text">FAQ</span></a></li>
+            <li><a href="solucao.html"><i class="fas fa-clipboard-list"></i><span class="text">Solução</span></a></li>
+        </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contato">
+            <h2>Para mais informações entre em contato</h2>
+            <div class="form-box">
+              <form class="formulario-contato">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required />
+          
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required />
+          
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+          
+                <button type="submit">Enviar</button>
+              </form>
+            </div>
+          </section>
+
+          <div class="popup" id="mensagem-enviada-popup">
+            Mensagem enviada com sucesso!
+        </div>
+          
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const formulario = document.querySelector('.formulario-contato');
+        const nomeInput = document.getElementById('nome');
+        const emailInput = document.getElementById('email');
+        const mensagemInput = document.getElementById('mensagem');
+        const erroMensagens = document.querySelectorAll('.erro-mensagem');
+
+        formulario.addEventListener('submit', function(event) {
+          let valido = true;
+
+          // Validação do Nome
+          if (!nomeInput.value.trim()) {
+            mostrarErro(nomeInput, erroMensagens[0], 'Por favor, digite seu nome.');
+            valido = false;
+          } else {
+            limparErro(nomeInput, erroMensagens[0]);
+          }
+
+          // Validação do E-mail
+          if (!emailInput.value.trim()) {
+            mostrarErro(emailInput, erroMensagens[1], 'Por favor, digite seu e-mail.');
+            valido = false;
+          } else if (!validarEmail(emailInput.value.trim())) {
+            mostrarErro(emailInput, erroMensagens[1], 'Por favor, digite um e-mail válido.');
+            valido = false;
+          } else {
+            limparErro(emailInput, erroMensagens[1]);
+          }
+
+          // Validação da Mensagem
+          if (!mensagemInput.value.trim()) {
+            mostrarErro(mensagemInput, erroMensagens[2], 'Por favor, digite sua mensagem.');
+            valido = false;
+          } else {
+            limparErro(mensagemInput, erroMensagens[2]);
+          }
+
+          if (!valido) {
+            event.preventDefault(); // Impede o envio do formulário se houver erros
+          }
+        });
+
+        function mostrarErro(input, mensagemElement, mensagem) {
+          mensagemElement.textContent = mensagem;
+          input.classList.add('erro');
+        }
+
+        function limparErro(input, mensagemElement) {
+          mensagemElement.textContent = '';
+          input.classList.remove('erro');
+        }
+
+        function validarEmail(email) {
+          // Expressão regular para validar o formato de e-mail
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailRegex.test(email);
+        }
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const formulario = document.querySelector('.formulario-contato');
+        const popupMensagem = document.getElementById('mensagem-enviada-popup');
+
+        formulario.addEventListener('submit', function(event) {
+          let valido = true;
+          // ... (seu código de validação aqui) ...
+
+          if (valido) {
+            event.preventDefault(); // Impede o envio real para simular e mostrar o popup
+            mostrarPopup();
+            formulario.reset(); // Limpa o formulário
+            // ... (seu código para enviar os dados do formulário aqui) ...
+          } else {
+            event.preventDefault(); // Impede o envio se houver erros
+          }
+        });
+
+        function mostrarPopup() {
+          popupMensagem.style.display = 'block';
+          setTimeout(function() {
+            popupMensagem.style.display = 'none';
+          }, 3000); // O popup desaparece após 3 segundos
+        }
+      });
+      
+    </script>
+
+    <footer>
+    <p>&copy; 2025 NexumTech. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
