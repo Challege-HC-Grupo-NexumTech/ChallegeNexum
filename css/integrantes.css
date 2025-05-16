@@ -1,0 +1,277 @@
+.integrantes-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.integrante {
+  background-color: white;
+  color: var(--segundacor);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: calc(100% - 1rem);
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.integrante:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.integrante img {
+  width: 80%;
+  height: auto;
+  max-width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.integrante h2 {
+  font-size: 1.2rem;
+  margin-top: 0.8rem;
+}
+
+.integrante a {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--corprincipal);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.integrante a:hover {
+  text-decoration: underline;
+}
+
+.destaque-grupo {
+  position: relative;
+  background-color: white;
+  color: var(--segundacor);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  box-sizing: border-box;
+  padding: 1rem;
+  text-align: center;
+  margin: 1.5rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.destaque-grupo h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+  color: var(--corprincipal);
+}
+
+.destaque-grupo p {
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 575.98px) {
+  .integrante {
+    width: 95%;
+  }
+
+  .integrante img {
+    max-width: 120px;
+    height: 120px;
+    border-radius: 6px;
+  }
+
+  .integrante h2 {
+    font-size: 1rem;
+  }
+
+  .integrante a {
+    font-size: 0.8rem;
+  }
+
+  .destaque-grupo {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .destaque-grupo h2 {
+    font-size: 1.2rem;
+  }
+
+  .destaque-grupo p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .integrantes-container {
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .integrante {
+    width: calc(50% - 1.5rem);
+    padding: 1.2rem;
+    border-radius: 10px;
+  }
+
+  .integrante img {
+    max-width: 180px;
+    height: 180px;
+    border-radius: 8px;
+  }
+
+  .integrante h2 {
+    font-size: 1.4rem;
+  }
+
+  .integrante a {
+    font-size: 0.95rem;
+  }
+
+  .destaque-grupo {
+    width: 80%;
+    padding: 1.2rem;
+    border-radius: 10px;
+  }
+
+  .destaque-grupo h2 {
+    font-size: 1.4rem;
+  }
+
+  .destaque-grupo p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .integrantes-container {
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .integrante {
+    width: calc(33.33% - 2rem);
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .integrante img {
+    max-width: 200px;
+    height: 200px;
+    border-radius: 10px;
+  }
+
+  .integrante h2 {
+    font-size: 1.5rem;
+  }
+
+  .integrante a {
+    font-size: 1rem;
+  }
+
+  .destaque-grupo {
+    width: 70%;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .destaque-grupo h2 {
+    font-size: 1.6rem;
+  }
+
+  .destaque-grupo p {
+    font-size: 1.05rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .integrantes-container {
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .integrante {
+    width: calc(33.33% - 2rem);
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .integrante img {
+    max-width: 220px;
+    height: 220px;
+    border-radius: 10px;
+  }
+
+  .integrante h2 {
+    font-size: 1.5rem;
+  }
+
+  .integrante a {
+    font-size: 1.1rem;
+  }
+
+  .destaque-grupo {
+    width: 60%;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .destaque-grupo h2 {
+    font-size: 1.7rem;
+  }
+
+  .destaque-grupo p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .integrantes-container {
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .integrante {
+    width: calc(33.33% - 2rem);
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .integrante img {
+    max-width: 250px;
+    height: 250px;
+    border-radius: 10px;
+  }
+
+  .integrante h2 {
+    font-size: 1.5rem;
+  }
+
+  .integrante a {
+    font-size: 1.1rem;
+  }
+
+  .destaque-grupo {
+    width: 50%;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .destaque-grupo h2 {
+    font-size: 1.8rem;
+  }
+
+  .destaque-grupo p {
+    font-size: 1.2rem;
+  }
+}
