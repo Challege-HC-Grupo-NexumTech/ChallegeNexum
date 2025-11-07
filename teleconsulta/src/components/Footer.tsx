@@ -1,0 +1,10 @@
+export default function Footer() {
+  return (
+    <footer className="bg-blue-600 text-white text-center py-4 mt-10">
+      <p className="font-semibold">
+        Nexum Tech © {new Date().getFullYear()} — Desenvolvido por Pamella
+        Christiny e Felipe Ribeiro 💙
+      </p>
+    </footer>
+  );
+}
